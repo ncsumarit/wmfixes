@@ -1,3 +1,4 @@
+<?php
 /*
  * Plugin Name:       Wernick Method Fixes
  * Plugin URI:        https://maritdigital.com
@@ -6,7 +7,7 @@
  * Author:            Jen McFarland
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       wmfixes
+ * Text Domain:       wmfixes-main
  */
 
 
