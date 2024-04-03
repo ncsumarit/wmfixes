@@ -3,7 +3,7 @@
  * Plugin Name:       Wernick Method Fixes
  * Plugin URI:        https://maritdigital.com
  * Description:       Plugin for custom fixes across themes
- * Version:           0.1
+ * Version:           0.12
  * Author:            Jen McFarland
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -56,12 +56,14 @@ function wm_stripe_desc( $description,$strings,$entry ) {
 */
 add_filter( 'gpns_evaluate_conditional_logic_on_send', '__return_true' );
 
-/* Alternate 'Other' text in Gravity Forms for Teacher Supply Order Form */
+/* Alternate 'Other' text in Gravity Forms for Teacher Supply Order Form (9) and New Class Form (8) */
 
 add_filter( 'gform_other_choice_value', 'set_other_choice_value', 10, 2 );
 function set_other_choice_value( $value, $field ) {
-    if ( is_object( $field ) && 43 === $field->id && 7 === $field->formId ) {
+    if ( is_object( $field ) && 43 === $field->id && 9 === $field->formId ) {
         $value = 'Enter Qty';
+    } elseif ( is_object( $field ) && 72 === $field->id && 8 === $field->formId ) {
+       $value = 'Enter Amt';
     }
     return $value;
 }
